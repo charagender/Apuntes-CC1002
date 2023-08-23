@@ -2,7 +2,11 @@
 # contar cuántos dígitos tiene un número dado
 # ej: largoNumero(2332) retorna 4
 def largoNumero(numero):
-    return len(str(numero))
+    numeroSinUltimo = numero // 10
+    if (numeroSinUltimo == 0):
+        return 1
+    else:
+        return 1 + largoNumero(numeroSinUltimo)
 
 # Test
 assert largoNumero(2332) == 4
